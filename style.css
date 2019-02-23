@@ -1,0 +1,557 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --theme-color: #fb4e4e;
+    --light-text: #ddd;
+    --dark-text: #777;
+}
+
+html {
+    background: linear-gradient(5deg,  salmon, orchid, salmon);
+    font-family: 'Verdana', sans-serif;
+}
+
+body {
+    margin: 23vh 10%;
+    box-shadow: 0 0 100px #000;
+}
+    body:before {
+        content: '';
+        -webkit-clip-path: polygon(0 0, 47% 0, 15% 75%, 0 85%);
+        clip-path: polygon(0 0, 47% 0, 15% 75%, 0 85%);
+        background: #242424;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    body:after {
+        content: '';
+        -webkit-clip-path: polygon(0 4%, 22% 0, 80% 8%, 100% 5%, 100% 64%, 76% 62%, 0 100%);
+        clip-path: polygon(0 4%, 22% 0, 80% 8%, 100% 5%, 100% 64%, 76% 62%, 0 100%);
+        background: #242424;
+        width: 100%;
+        height: 170%;
+        position: absolute;
+        top: 165%;
+        left: 0;
+        z-index: -1;
+    }
+
+header {
+    position: relative;
+    background: url('img/cover.jpg');
+    background-size: cover;
+    background-position: center;
+}
+    header:before {
+        content: '';
+        width: .8rem;
+        height: 8rem;
+        position: absolute;
+        bottom: -2rem;
+        left: 11%;  
+        background: var(--theme-color);
+    }
+
+nav {
+    display: flex;
+    padding: .8rem 10%;
+    background: var(--theme-color);
+    border-radius: .4rem;
+}
+    nav a.logo {
+        color: var(--light-text);
+        font-size: 1.5rem;
+        font-weight: 800;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px #000;
+    }
+
+    nav .menu-btn {
+        margin-left: auto;
+        cursor: pointer;
+    }
+    nav .menu-btn span {
+        display: block;
+        width: 2rem;
+        height: .2rem;
+        margin: .3rem 0;
+        background: var(--light-text);
+        box-shadow: 0 0 10px #000;
+    }
+
+.title {
+    margin: 22vh 12% 0;
+    padding-bottom: 25vh;
+    width: 35%;
+    color: var(--light-text);
+}
+    .title h1 {
+        font-size: 4rem;
+        font-weight: 200;
+    }
+
+    .title p {
+        margin: 2rem 0 1.5rem;
+        font-size: .9rem;
+        line-height: 1.5;
+    }
+    
+    .title .btn {
+        display: inline-block;
+        padding: .7rem 2rem;
+        text-transform: uppercase;
+        background: var(--theme-color);
+        cursor: pointer;
+    }
+
+.runner {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-height: 83vh;
+    margin: 0 10% -15% 0;
+    z-index: 22;
+}
+
+main {
+    background: #fff;
+    overflow: hidden;
+}
+
+/* About section styling */
+#about {
+    margin: 0 12%;
+    padding: 5rem 0 4rem;
+    color: var(--dark-text);
+}
+    #about .about-desc {
+        width: 70%;
+    }
+        #about .about-desc h2 {
+            font-size: 2rem;
+            font-weight: 200;
+            margin-bottom: 1rem;
+        }
+        #about .about-desc p {
+            font-size: .9rem;
+        }
+    
+    #about .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 5rem;
+        color: var(--dark-text);
+    }
+        #about .boxes div {
+            width: 22.5%;
+            margin-right: 2.5%;
+            padding: 1rem 0;
+            position: relative;
+        }
+            #about .boxes div:before {
+                content: '';
+                width: 1.5rem;
+                height: .3rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: var(--theme-color);
+            }
+
+        #about .boxes div h3 {
+            color: #333;
+            text-transform: uppercase;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        #about .boxes div p {
+            font-size: .8rem;
+            line-height: 1.5;
+        }
+
+/* Icons section styling */
+section.icons {
+    padding: 5rem 12%;
+    color: var(--light-text);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #3d1852, #e67364);
+}
+    section.icons div {
+        width: 20%;
+    }
+        section.icons div h4 {
+            margin: 1rem 0;
+            text-transform: uppercase;
+        }
+        section.icons div i {
+            font-size: 3rem;
+        }
+        section.icons div p {
+            font-size: .8rem;
+            line-height: 1.5;
+        }
+
+/* Services section styling */
+#services {
+    padding: 4rem 10%;
+    text-align: center;
+    color: var(--dark-text);
+    background: var(--light-text);
+}
+    #services > p {
+        font-size: .9rem;
+        margin: 1.5rem 0 5rem;
+        font-weight: 900;
+    }
+
+    .serv-boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+        .serv-boxes .box {
+            width: 31.5%;
+            background: #fff;
+            text-align: left;
+        }
+            .serv-boxes .box img {
+                width: 100%;
+                height: 15rem;
+                object-fit: cover;
+            }
+            .serv-boxes .box .serv-info {
+                padding: 1.5rem;
+            }
+            .serv-boxes .box .serv-info h3 {
+                margin-bottom: 1rem;
+                text-transform: uppercase;
+                font-size: 1.1rem;
+                font-weight: 400;
+            }
+
+/* More info section style */
+#more-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+    #more-info img {
+        width: 50%;
+        height: auto;
+    }
+    #more-info .info-content {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: left;
+        padding: 10rem 1rem 10rem 4rem;
+        background: var(--theme-color);
+        color: var(--light-text);
+    }
+        #more-info .info-content h2 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 0 #242424;
+        }
+        #more-info .info-content p {
+            margin-top: 1.2rem;
+        }
+        #more-info .info-content .btn {
+            display: inline-block;
+            padding: .5rem 1.5rem;
+            background: #fff;
+            color: var(--dark-text);
+            margin: 1.5rem auto 0 0;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 0 15px #000;
+        }
+
+#how-to {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5rem 12%;
+    background: #fff;
+    color: var(--dark-text);
+}
+    .how-to-box {
+        width: 30%;
+        margin-right: 2.5%;
+    }  
+        .how-to-box:first-child {
+            border-bottom: solid 1rem var(--theme-color);
+        }
+        .how-to-box:first-child p {
+            font-size: 1.2rem;
+        } 
+
+        .how-to-box h3 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            padding: 1.2rem 0;
+        }
+        .how-to-box p {
+            font-size: .9rem;
+            line-height: 1.5;
+        }
+        .how-to-box img {
+            width: 75%;
+            margin-left: 4rem;
+            
+        }
+
+.quote {
+    text-align: center;
+    background: linear-gradient(90deg, #3d1852, #e67364);
+    padding: 4rem 12%;
+    color: var(--light-text);
+}
+    .quote i {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    .quote p {
+        font-size: 1.2rem;
+    }
+    
+/* Scroll bars styling */
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+    background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--theme-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #242424; 
+}
+
+/* Media queries for smaller screens */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        margin: 15vh 7%;
+        box-shadow: 0 0 50px #000;
+    }
+
+    .title {
+        margin: 20vh 7% 0;
+        padding-bottom: 20vh;
+        width: 50%;
+    }
+
+    .title h1 {
+        font-size: 2rem;
+    }
+
+    .runner {
+        right: -7rem;
+        max-height: 50vh;
+        margin: 0 15% -15% 0;
+    }
+
+    #about .boxes div {
+        width: 47%;
+        margin-right: 3%;
+    }
+
+    section.icons {
+        padding: 3rem 7%;
+    }
+        section.icons div {
+            width: 50%;
+        }
+            section.icons div i {
+                font-size: 2.5rem;
+                margin-top: 1rem;
+            }
+
+    #services {
+        padding: 3rem 12%;
+    }
+        #services > p {
+            font-size: .9rem;
+            margin: 1.5rem 0 5rem;
+        }
+            .serv-boxes .box {
+                width: 100%;
+                margin: .5rem 0;
+            }
+                .serv-boxes .box img {
+                    height: 15rem;
+                }
+
+    #more-info .info-content {
+        width: 50%;
+        padding: 1rem;
+    }
+        #more-info .info-content h2 {
+            font-size: 1.4rem;
+        }
+        #more-info .info-content p {
+            margin-top: 1rem;
+        }
+
+    #how-to {
+        padding: 2rem 7%;
+    }
+        .how-to-box {
+            width: 70%;
+            margin: 0 auto;
+        }  
+            .how-to-box:first-child {
+                padding: 1rem 0;
+                margin-bottom: 2rem;
+                border-bottom: solid .6rem var(--theme-color);
+            }
+            .how-to-box img {
+                width: 70%;
+                margin-top: 1rem;
+                margin-right: auto;
+            }
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+    body {
+        margin: 10vh 5%;
+        box-shadow: 0 0 20px #000;
+    }
+
+    header:before {
+        width: .6rem;
+        height: 5rem;
+        left: 7%;
+    }
+
+    nav a.logo {
+        font-size: 1rem;
+        margin-top: .3rem;
+    }
+
+    .title {
+        margin: 20vh 7% 0;
+        padding-bottom: 20vh;
+        width: 60%;
+    }
+
+    .title h1 {
+        font-size: 2rem;
+    }
+    
+    .title .btn {
+        display: inline-block;
+        padding: .7rem 2rem;
+        background: var(--theme-color);
+        cursor: pointer;
+    }
+
+    .runner {
+        right: -7rem;
+        max-height: 70vh;
+        margin: 0 10% -15% 0;
+    }
+
+    #about .boxes div {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #about {
+        margin: 0 10%;
+    }
+        #about .about-desc {
+            width: 95%;
+        }
+        #about .about-desc h2 {
+            width: 80%;
+            font-size: 1.6rem;
+        }
+
+    section.icons {
+        padding: 2rem 7%;
+    }
+        section.icons div {
+            width: 100%;
+        }
+            section.icons div i {
+                font-size: 2rem;
+                margin-top: 2rem;
+            }
+
+    #services {
+        padding: 3rem 7%;
+    }
+        #services > p {
+            font-size: .9rem;
+            margin: 1.5rem 0 5rem;
+        }
+            .serv-boxes .box {
+                width: 100%;
+                margin: .5rem 0;
+            }
+                .serv-boxes .box img {
+                    height: 12rem;
+                }
+    
+    #more-info img {
+        width: 100%;
+        height: 80%;
+    }
+    #more-info .info-content {
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+        #more-info .info-content p {
+            font-size: .9rem;
+        }
+
+    #how-to {
+        padding: 2rem 7%;
+    }
+        .how-to-box {
+            width: 100%;
+            margin-right: 0;
+        }  
+        .how-to-box h3 {
+            font-size: 1.6rem;
+        }
+            .how-to-box:first-child {
+                padding: 1rem 0;
+                margin-bottom: 2rem;
+                border-bottom: solid .6rem var(--theme-color);
+            }
+            .how-to-box img {
+                width: 100%;
+                margin-top: 1rem;
+                margin-left: 0;
+            }
+
+    .quote {
+        padding: 3rem 7%;
+    }
+        .quote i {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .quote p {
+            font-size: .9rem;
+        }
+}
