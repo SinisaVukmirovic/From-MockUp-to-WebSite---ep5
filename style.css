@@ -364,8 +364,8 @@ section.icons {
 
     .runner {
         right: -7rem;
-        max-height: 50vh;
-        margin: 0 15% -15% 0;
+        max-height: 60vh;
+        margin: 0 20% -15% 0;
     }
 
     #about .boxes div {
